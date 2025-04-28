@@ -1,0 +1,9 @@
+<ul>
+  <li *ngFor="let address of addresses">
+    <app-child [address]="address"></app-child>
+  </li>
+</ul>
+
+<h2>Parent Component</h2>
+<p>Message from child: {{ message }}</p>
+<app-second-child (messageEvent)="receiveMessage($event)"></app-second-child>
