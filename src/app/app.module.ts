@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { SecondChildComponent } from './components/second-child/second-child.component';
+import { TitleCase } from './pipes/titlecase.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ParentComponent,
     ChildComponent,
-    SecondChildComponent
+    SecondChildComponent,
+    TitleCase
   ],
   imports: [
     BrowserModule,

@@ -3,7 +3,7 @@
     <app-child [address]="address"></app-child>
   </li>
 </ul>
-
+<div>{{pipeData | titleCase}}</div>
 <h2>Parent Component</h2>
 <p>Message from child: {{ message }}</p>
 <app-second-child (messageEvent)="receiveMessage($event)"></app-second-child>

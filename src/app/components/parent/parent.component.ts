@@ -20,4 +20,6 @@ export class ParentComponent {
     console.log("recering message")
     this.message = $event;
   }
+
+  pipeData = "usepipe"
 }
