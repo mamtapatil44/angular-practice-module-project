@@ -9,11 +9,19 @@ export class UserService {
     private userSource = new BehaviorSubject<string>('');
     userSource$ = this.userSource.asObservable();
 
+    private userData = new BehaviorSubject<Object>({});
+    userData$ = this.userData.asObservable();
+
     constructor(private http :HttpClient){
 
     }
   updateUserSource(name:string){
     this.userSource.next(name)
+
+  }
+
+  updateUserData(obj:any){
+    this.userData.next(obj)
 
   }
 

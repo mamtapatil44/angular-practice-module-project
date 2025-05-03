@@ -8,10 +8,15 @@ import { UserService } from '../../services/user.service';
 })
 export class ReceiverComponent implements OnInit {
   username: string = '';
+  userData ={}
   constructor(private userService: UserService) {}
   ngOnInit(): void {
     this.userService.userSource$.subscribe((name) => {
       this.username = name;
+    });
+    this.userService.userData$.subscribe((data) => {
+      console.log("data" ,data)
+      this.userData = data;
     });
   }
 }

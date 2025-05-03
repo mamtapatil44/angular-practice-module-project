@@ -11,7 +11,16 @@ export class SenderComponent {
 
   }
   name : string =''
+  lastname :string =''
   sendData(){
-    this.userService.updateUserSource(this.name)
+    this.userService.updateUserSource(this.name);
+  }
+  sendUserData(){
+    const obj ={
+      firstname :this.name,
+      lastname:this.lastname
+    }
+    this.userService.updateUserData(obj)
+
   }
 }
