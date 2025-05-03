@@ -9,6 +9,7 @@ import { SecondChildComponent } from './components/second-child/second-child.com
 import { TitleCase } from './pipes/titlecase.pipe';
 import { HighLight } from './directives/highlight.directive';
 import { HasPermission } from './directives/hasPermission.directive';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HasPermission } from './directives/hasPermission.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

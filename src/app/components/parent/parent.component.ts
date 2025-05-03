@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from '../../services/user.service';
 
 export class Address {
   street!: string;
@@ -10,7 +11,10 @@ export class Address {
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss'
 })
-export class ParentComponent {
+export class ParentComponent implements OnInit{
+  constructor(private userService :UserService){
+
+  }
   message: string = '';
   @Input() addresses: Address[] = [
     { street: 'Third Avenue', city: 'New York', zipCode: '10001' },
@@ -22,4 +26,14 @@ export class ParentComponent {
   }
 
   pipeData = "usepipe"
+
+  ngOnInit(): void {
+    const obj ={
+      name:"mamta",
+      age:"20"
+    }
+    this.userService.addUser(obj).subscribe((data)=>{
+      console.log("data ",data)
+    })
+  }
 }
