@@ -10,6 +10,9 @@ import { TitleCase } from './pipes/titlecase.pipe';
 import { HighLight } from './directives/highlight.directive';
 import { HasPermission } from './directives/hasPermission.directive';
 import { HttpClientModule } from '@angular/common/http';
+import { SenderComponent } from './components/sender/sender.component';
+import { ReceiverComponent } from './components/receiver/receiver.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,11 +22,14 @@ import { HttpClientModule } from '@angular/common/http';
     SecondChildComponent,
     TitleCase,
     HighLight,
-    HasPermission
+    HasPermission,
+    SenderComponent,
+    ReceiverComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule
   ],
   providers: [],
