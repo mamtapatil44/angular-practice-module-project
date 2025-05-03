@@ -7,6 +7,8 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { SecondChildComponent } from './components/second-child/second-child.component';
 import { TitleCase } from './pipes/titlecase.pipe';
+import { HighLight } from './directives/highlight.directive';
+import { HasPermission } from './directives/hasPermission.directive';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TitleCase } from './pipes/titlecase.pipe';
     ParentComponent,
     ChildComponent,
     SecondChildComponent,
-    TitleCase
+    TitleCase,
+    HighLight,
+    HasPermission
   ],
   imports: [
     BrowserModule,

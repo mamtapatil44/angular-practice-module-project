@@ -4,6 +4,7 @@
   </li>
 </ul>
 <div>{{pipeData | titleCase}}</div>
+<div *appHasPermission>  Welcome to parent component</div>
 <h2>Parent Component</h2>
 <p>Message from child: {{ message }}</p>
 <app-second-child (messageEvent)="receiveMessage($event)"></app-second-child>
