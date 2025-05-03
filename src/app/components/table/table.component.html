@@ -1,0 +1,17 @@
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Website</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let tdata of tableData">
+            <td>{{tdata?.name}}</td>
+            <td>{{tdata?.email}}</td>
+            <td>{{tdata?.website}}</td>
+        </tr>
+    </tbody>
+
+</table>

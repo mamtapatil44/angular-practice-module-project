@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SenderComponent } from './components/sender/sender.component';
 import { ReceiverComponent } from './components/receiver/receiver.component';
 import { FormsModule } from '@angular/forms';
+import { TableComponent } from './components/table/table.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FormsModule } from '@angular/forms';
     HighLight,
     HasPermission,
     SenderComponent,
-    ReceiverComponent
+    ReceiverComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

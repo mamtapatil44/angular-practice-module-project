@@ -33,4 +33,12 @@ export class UserService {
         )
     }
 
+    getUsers():Observable<any>{
+        return this.http.get("https://jsonplaceholder.typicode.com/users").pipe(
+            catchError((err)=>{
+                return throwError(() => new Error('Something went wrong. Please try again later.'));
+            }) 
+        )
+    }
+
 }
