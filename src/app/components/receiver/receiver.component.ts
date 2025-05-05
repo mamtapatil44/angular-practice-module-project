@@ -8,7 +8,7 @@ import { UserService } from '../../services/user.service';
 })
 export class ReceiverComponent implements OnInit {
   username: string = '';
-  userData ={}
+  userData:any
   constructor(private userService: UserService) {}
   ngOnInit(): void {
     this.userService.userSource$.subscribe((name) => {

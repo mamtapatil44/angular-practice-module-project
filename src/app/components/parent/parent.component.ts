@@ -31,6 +31,7 @@ export class ParentComponent implements OnInit{
     const obj ={
       name:"mamta",
       age:"20"
+      
     }
     this.userService.addUser(obj).subscribe((data)=>{
       console.log("data ",data)

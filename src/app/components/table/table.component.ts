@@ -11,11 +11,12 @@ export class TableComponent implements OnInit {
 ngOnInit(): void {
   this.getUsers()
 }
-tableData = [];
+tableData = [{name:"",email:'',website:''}];
 
 getUsers(){
   this.userService.getUsers().subscribe((data)=>{
     this.tableData = data;
+    console.log()
   })
 }
 }

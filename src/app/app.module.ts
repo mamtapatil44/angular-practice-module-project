@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,15 @@ import { SenderComponent } from './components/sender/sender.component';
 import { ReceiverComponent } from './components/receiver/receiver.component';
 import { FormsModule } from '@angular/forms';
 import { TableComponent } from './components/table/table.component';
+import { CounterParentComponent } from './components/counter-parent/counter-parent.component';
+import { CounterChildComponent } from './components/counter-child/counter-child.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { counterReducer } from './store/counter.reducer';
+
+import { productReducer } from './store/product/product.reducer';
+import { ProductEffects } from './store/product/product.effects';
 
 @NgModule({
   declarations: [
@@ -26,13 +35,18 @@ import { TableComponent } from './components/table/table.component';
     HasPermission,
     SenderComponent,
     ReceiverComponent,
-    TableComponent
+    TableComponent,
+    CounterParentComponent,
+    CounterChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({ product:productReducer}),
+    EffectsModule.forRoot([ProductEffects]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]

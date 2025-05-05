@@ -7,11 +7,14 @@
         </tr>
     </thead>
     <tbody>
+      <ng-template *ngIf="tableData.length >0">
         <tr *ngFor="let tdata of tableData">
-            <td>{{tdata?.name}}</td>
-            <td>{{tdata?.email}}</td>
-            <td>{{tdata?.website}}</td>
+            <td>{{tdata.name}}</td>
+            <td>{{tdata.email}}</td>
+            <td>{{tdata.website}}</td>
         </tr>
+      </ng-template>
+        
     </tbody>
 
 </table>
